@@ -8,6 +8,18 @@ var app = require('http').createServer(function handler (req, res) {
   }
 );
 
+//app.on('request', function (req) {
+//  console.log('request!!!!!!!!!!!!!');
+//});
+//app.on('connection', function (socket) {
+//  console.log('connection!!!!!!!!!!!!!');
+//
+//  socket.on('data', function(buf) {
+//    console.log("sock");
+//    console.log(buf.toString('utf8'));
+//  })
+//});
+
 var opts = {
   //'transports': ['websocket'],
   'match origin protocol': true
@@ -18,7 +30,8 @@ if (process.env.IISNODE_VERSION) {
   opts['resource'] = '/socket.io';
 }
 
-var io = require('socket.io').listen(app, opts);
+
+var io = require("socket.io")(app, opts);
 
 
 io.sockets.on('connection', function (socket) {
