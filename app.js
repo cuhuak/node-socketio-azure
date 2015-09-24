@@ -9,7 +9,13 @@ var http = require('http');
 
 var app = express();
 app.set('port', PORT);
-app.use(cors());
+app.use(cors({credentials: true, origin: true}));
+app.get('/', function (req, res) {
+  res.end('hello');
+});
+app.use(function (req, res, next) {
+  res.status(404).end('404 not found');
+});
 //app.use(express.static(path.join(__dirname, 'public')));
 
 
