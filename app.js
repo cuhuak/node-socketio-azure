@@ -35,6 +35,10 @@ if (process.env.IISNODE_VERSION) {
 
 var io = require("socket.io")(webServer, opts);
 
+io.use(function(socket, next) {
+  next();
+});
+
 io.on('connection', function(socket){
   socket.on('chat message', function(msg){
     io.emit('chat message', msg);
