@@ -1,5 +1,5 @@
 "use strict";
-var PORT = process.env.port || 3000;
+var PORT = process.env.PORT || 3000;
 
 var express = require('express');
 var path = require('path');
@@ -16,7 +16,6 @@ app.get('/', function (req, res) {
 app.use(function (req, res, next) {
   res.status(404).end('404 not found');
 });
-//app.use(express.static(path.join(__dirname, 'public')));
 
 
 var webServer = http.createServer(app).listen(PORT, function () {
