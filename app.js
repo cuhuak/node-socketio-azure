@@ -9,7 +9,7 @@ var app = require('http').createServer(function handler (req, res) {
 );
 
 var opts = {
-  'transports': ['websocket', 'polling'],
+  'transports': ['websocket'],
   'match origin protocol': true
 };
 
