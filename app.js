@@ -24,7 +24,7 @@ var webServer = http.createServer(app).listen(PORT, function () {
 
 
 var opts = {
-  //'transports': ['websocket'],
+  'transports': ['websocket'],
   'match origin protocol': true
 };
 
