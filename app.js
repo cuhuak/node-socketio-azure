@@ -29,7 +29,6 @@ var opts = {
 };
 
 if (process.env.IISNODE_VERSION) {
-  opts['resource'] = '/socket.io';
   opts['path'] = '/socket.io';
 }
 
