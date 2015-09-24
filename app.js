@@ -18,7 +18,7 @@ if (process.env.IISNODE_VERSION) {
   opts['resource'] = '/socket.io';
 }
 
-var io = require('socket.io').listen(app);
+var io = require('socket.io').listen(app, opts);
 
 
 io.sockets.on('connection', function (socket) {
