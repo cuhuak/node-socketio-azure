@@ -9,7 +9,7 @@ var http = require('http');
 
 var app = express();
 app.set('port', PORT);
-app.use(cors({credentials: true, origin: true}));
+app.use(cors());
 app.get('/', function (req, res) {
   res.end('hello');
 });
